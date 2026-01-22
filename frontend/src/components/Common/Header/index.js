@@ -10,6 +10,12 @@ function Header() {
     localStorage.getItem("theme") == "dark" ? true : false
   );
 
+  const logout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+    window.location.href = "/login";
+  };
+
   useEffect(() => {
     if (localStorage.getItem("theme") == "dark") {
       setDark();
@@ -48,6 +54,10 @@ function Header() {
         <a href="/">
           <p className="link">Home</p>
         </a>
+	  <button className="link" onClick={logout}>
+  Logout
+</button>
+
         <a href="/compare">
           <p className="link">Compare</p>
         </a>

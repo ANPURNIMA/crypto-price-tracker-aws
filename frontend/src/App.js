@@ -10,6 +10,12 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
 import API from "./api";
+import Login from "./pages/Auth/Login";
+import Register from "./pages/Auth/Register";
+import Admin from "./pages/Auth/Admin";
+import ProtectedRoute from "./components/Auth/ProtectedRoute";
+
+
 
 
 
@@ -75,12 +81,43 @@ function App() {
         
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/coin/:id" element={<Coin />} />
-            <Route path="/compare" element={<Compare />} />
-            <Route path="/watchlist" element={<Watchlist />} />
-          </Routes>
+  <Route path="/" element={<Home />} />
+
+  <Route
+    path="/dashboard"
+    element={
+      <ProtectedRoute>
+        <Dashboard />
+      </ProtectedRoute>
+    }
+  />
+
+  <Route path="/coin/:id" element={<Coin />} />
+
+  <Route path="/compare" element={<Compare />} />
+
+  <Route
+    path="/watchlist"
+    element={
+      <ProtectedRoute>
+        <Watchlist />
+      </ProtectedRoute>
+    }
+  />
+
+  <Route path="/login" element={<Login />} />
+  <Route path="/register" element={<Register />} />
+
+  <Route
+    path="/admin"
+    element={
+      <ProtectedRoute roleRequired="admin">
+        <Admin />
+      </ProtectedRoute>
+    }
+  />
+</Routes>
+
         </BrowserRouter>
       </ThemeProvider>
     </div>
