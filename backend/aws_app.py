@@ -27,7 +27,7 @@ DYNAMODB_AUDIT_TABLE = os.getenv(
 
 SNS_TOPIC_ARN = os.getenv(
     "SNS_TOPIC_ARN",
-    "arn:aws:sns:us-east-1:123456789012:crypto-alerts"
+    "arn:aws:sns:us-east-1:440744249462:crypto-alerts"
 )
 
 # =========================
