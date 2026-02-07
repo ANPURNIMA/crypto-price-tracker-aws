@@ -9,7 +9,7 @@ A full-stack cryptocurrency tracking web application with authentication, person
 Frontend: React  
 Backend: Flask  
 Database: SQLite + AWS DynamoDB  
-Cloud Services: AWS EC2, SNS
+Cloud Services: AWS EC2, SNS  
 Authentication: JWT  
 Process Manager: PM2  
 
@@ -27,6 +27,8 @@ Process Manager: PM2
 ---
 
 ## 📂 Project Structure
+
+
 
 frontend/ → React Application
 backend/ → Flask API & Dynamo DB
