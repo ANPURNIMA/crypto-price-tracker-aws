@@ -1,124 +1,113 @@
-.main-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 1rem 3rem;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700&display=swap");
+
+:root {
+  --white: #fff;
+  --black: #111;
+  --blue: #3a80e9;
+  --grey: #888;
+  --darkgrey: #1b1b1b;
+  --green: #61c96f;
+  --red: #f94141;
 }
 
-.heading1,
-.heading2 {
-  font-size: 6rem;
+[data-theme="dark"] {
+  --white: #ffffff;
+  --black: #111;
+  --grey: #888;
+  --darkgrey: #1b1b1b;
+}
+
+[data-theme="light"] {
+  --white: #111;
+  --black: #fff;
+  --grey: #888;
+  --darkgrey: #f3f3f3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   margin: 0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--black);
+
+  overflow-x: hidden;
 }
 
-.heading1:hover {
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: var(--white);
-  color: var(--black);
-  transition: all 0.3s;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  color: var(--white);
 }
 
-.heading2 {
-  color: var(--blue);
+::selection {
+  background-color: var(--blue);
+  color: var(--white);
 }
 
-.info-text {
-  color: var(--grey);
-  font-weight: 300;
+::-webkit-scrollbar {
+  width: 0.3rem;
 }
 
-.btn-flex {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
+::-webkit-scrollbar-track {
+  background-color: var(--black);
 }
 
-.gradient-div {
-  position: relative;
-  width: 50%;
-  margin-left: auto;
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 10px;
 }
 
-.gradient {
-  position: absolute;
-  right: 0px;
-  top: 80px;
-  width: 250px;
-}
-.iphone {
-  position: absolute;
-  right: 10px;
-  width: 300px;
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 }
 
-@media only screen and (max-width: 1350px) {
-  .heading1,
-  .heading2 {
-    font-size: 5rem;
-  }
+a {
+  text-decoration: none;
+  color: var(--white) !important;
 }
 
-@media only screen and (max-width: 1050px) {
-  .heading1,
-  .heading2 {
-    font-size: 4rem;
-  }
-
-  .gradient {
-    right: 0px;
-    top: 60px;
-    width: 200px;
-  }
-  .iphone {
-    right: 0px;
-    width: 250px;
-  }
+.cursor {
+  position: fixed;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  background-color: var(--blue);
+  z-index: 10000;
+  border: 2px solid var(--blue);
+  height: 0.3rem;
+  width: 0.3rem;
+  border-radius: 50%;
+  transition: all 200ms ease-out;
 }
 
-@media only screen and (max-width: 800px) {
-  .heading1,
-  .heading2 {
-    font-size: 2rem;
-  }
-  .main-flex {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .heading1,
-  .heading2,
-  .info-text {
-    text-align: center;
-  }
-
-  .info-text {
-    font-size: 0.8rem;
-  }
-
-  .btn-flex {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .gradient-div {
-    margin-top: 3rem;
-    margin-right: auto;
-  }
-}
-@media only screen and (max-width: 800px) {
-  .gradient,
-  .iphone {
-    left: 0px;
-  }
-
-  .iphone {
-    left: -30px;
-  }
+.cursor-pointer {
+  position: fixed;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  background-color: transparent;
+  border-radius: 50%;
+  z-index: 10000;
+  border: 2px solid var(--blue);
+  height: 2rem;
+  width: 2rem;
+  transition: all 400ms ease-out;
 }
 
-/* 
-clamp(minFontSize, ratio, maxFontSize)
-  formula to calculate the ratio
-  (max-size/design width) * 100
-  example: (70/1440)*100 */
+@media only screen and (max-width: 600px) {
+  .cursor-pointer,
+  .cursor {
+    display: none;
+  }
+}
