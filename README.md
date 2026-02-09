@@ -92,6 +92,5 @@ DynamoDB → Alerts & Admin Logs
 ---
 
 ## 👨‍💻 Author
-Ayush Srivastava  
-GitHub: https://github.com/ayushsrivastava1810
+Anpurnima Sain
 
